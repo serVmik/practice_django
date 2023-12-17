@@ -1,0 +1,11 @@
+.venv/
+.idea/
+__pycache__/
+staticfiles/
+htmlcov/
+
+*.sqlite3
+db*
+
+.env
+.coverage
