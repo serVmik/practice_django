@@ -71,11 +71,58 @@ poetry add --group dev notebook==6.5.6
 > **Note:**  
 > add only notebook==6.5.6
 
-Для интеграции ```notebook``` с ```Django``` необходимо установить ```django-extensions```   
+To integrate ```notebook``` with ```Django``` you need to install ```django-extensions```   
 To run the notebook:
 ```cfgrlanguage
 jupyter notebook
 ```
+
+### [jupyterthemes](https://github.com/dunovank/jupyter-themes#install-with-pip)
+```cfgrlanguage
+poetry add --group dev jupyterthemes
+```
+#### [Command Line Usage jupyterthemes](https://github.com/dunovank/jupyter-themes#command-line-usage)
+cl options| arg |default
+|-|-|-|
+List Themes| -l  |--
+Theme Name to Install| -t  |--
+> *list available themes*  
+> jt -l  
+>  
+> *select theme...*  
+> jt -t chesterish  
+
+### Auto code completion [jupyter-tabnine](https://github.com/codota/jupyter-tabnine#installation)
+```cfgrlanguage
+poetry add --group dev jupyter_contrib_nbextensions
+```
+Do enable settings for user.  
+Add without using poetry:
+```cfgrlanguage
+jupyter contrib nbextension install --user
+```
+Next:
+```cfgrlanguage
+poetry add --group dev jupyter_nbextensions_configurator
+```
+Do enable settings for user.  
+Add without using poetry:
+```cfgrlanguage
+jupyter nbextensions_configurator enable --user
+```
+Do enable auto code completion in the settings of the running application jupiter.  
+Go to menu "Nbextensions" and uncheck disable configuration for nbextensions.  
+Сheck the box "Hinterland".  
+End.
+#### Run jupiter notebook:
+```
+poetry run python manage.py shell_plus --notebook
+```
+or
+```cfgrlanguage
+make shell
+```
+  
 
 
 ## [django-extensions](https://django-extensions.readthedocs.io/en/latest/installation_instructions.html#installing)

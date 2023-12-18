@@ -272,5 +272,6 @@ MESSAGE_TAGS = {
 # End add messages color
 
 
+# Для сторонних библиотек jupiter-notebook
 # в производстве убрать
 os.environ['DJANGO_ALLOW_ASYNC_UNSAFE'] = 'true'
