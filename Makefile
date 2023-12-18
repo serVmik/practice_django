@@ -14,13 +14,20 @@ test-just:
 	@$(MANAGE) test $(TEST_JUST)
 
 shell:
+	poetry run python manage.py shell_plus --notebook
+
+shell-ipython:
 	poetry run python manage.py shell_plus --ipython
 
 dry:
 	@$(MANAGE) makemigrations --dry-run
 
+mmigrate:
+	@$(MANAGE) makemigrations
+
 migrate:
 	@$(MANAGE) migrate
+
 
 .PHONY: static
 static:

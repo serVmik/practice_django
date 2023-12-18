@@ -61,4 +61,33 @@ CHANNEL_LAYERS = {
 
   
 #### routing.py
-> add routing.py to practice_django/
+add ```routing.py``` to ```practice_django/```
+
+
+## [jupyter-notebook](https://jupyter.org/install#jupyter-notebook)
+```cfgrlanguage
+poetry add --group dev notebook==6.5.6
+```
+> **Note:**  
+> add only notebook==6.5.6
+
+Для интеграции ```notebook``` с ```Django``` необходимо установить ```django-extensions```   
+To run the notebook:
+```cfgrlanguage
+jupyter notebook
+```
+
+
+## [django-extensions](https://django-extensions.readthedocs.io/en/latest/installation_instructions.html#installing)
+```cfgrlanguage
+poetry add --group dev django-extensions
+```
+[Configuration](https://django-extensions.readthedocs.io/en/latest/installation_instructions.html#configuration)
+```cfgrlanguage
+INSTALLED_APPS = (
+    ...
+    'django_extensions',
+    ...
+)
+```
+

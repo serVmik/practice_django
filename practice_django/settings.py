@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import django.core.mail.backends.smtp
+from django.contrib import messages
 
 # django-debug-toolbar
 INTERNAL_IPS = [
@@ -57,13 +59,15 @@ INSTALLED_APPS = [
     # 'channels', commented out temporarily
     # https://docs.djangoproject.com/en/4.2/ref/contrib/humanize/#module-django.contrib.humanize
     'django.contrib.humanize',
-    # --=== allauth ===--
+    # https://django-extensions.readthedocs.io/en/latest/index.html
+    'django_extensions',
+    # allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
-    # # --End allauth --
+    # End allauth
     'crispy_forms',
     'crispy_bootstrap5',
     'ckeditor',
@@ -242,3 +246,31 @@ CHANNEL_LAYERS = {
 }
 """
 # End channels
+
+
+# email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS')
+# End email
+
+
+GOOGLE_RECAPTCHA_SECRET_KEY = os.getenv('GOOGLE_RECAPTCHA_SECRET_KEY')
+
+
+# Add messages color
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
+# End add messages color
+
+
+# в производстве убрать
+os.environ['DJANGO_ALLOW_ASYNC_UNSAFE'] = 'true'
