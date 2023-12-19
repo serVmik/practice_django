@@ -8,6 +8,7 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+# Tnd django-debug-toolbar
 
 """
 Django settings for practice_django project.
@@ -40,6 +41,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
+# All hosts: '*'
 ALLOWED_HOSTS = ['*']
 
 
@@ -52,7 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # --======= installed packages =======--
+    # installed packages
     # https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#installation
     'debug_toolbar',
     # https://channels.readthedocs.io/en/latest/installation.html#installation
@@ -71,9 +73,11 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'ckeditor',
-    # --======= project applications =======--
+
+    # project applications
     'blog.apps.BlogConfig',
-    # --======= installed packages =======--
+    # End
+    # installed packages
     # Add django_cleanup to the bottom of INSTALLED_APPS
     # https://github.com/un1t/django-cleanup/#configuration
     'django_cleanup.apps.CleanupConfig',
@@ -111,7 +115,7 @@ TEMPLATES = [
     },
 ]
 
-# --======= django-allauth =======--
+# django-allauth
 # https://docs.allauth.org/en/latest/installation/quickstart.html#quickstart
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -136,7 +140,7 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     }
 }
-# -- End django-allauth --
+# End django-allauth
 
 WSGI_APPLICATION = 'practice_django.wsgi.application'
 
@@ -191,21 +195,23 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#static-root
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-
+# https://docs.djangoproject.com/en/5.0/ref/settings/#staticfiles-dirs
 STATICFILES_DIRS = [
     # "/home/special.polls.com/polls/static",
 ]
 
-
+# https://docs.djangoproject.com/en/5.0/ref/settings/#staticfiles-finders
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-
+# https://docs.djangoproject.com/en/5.0/ref/settings/#media-root
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# https://docs.djangoproject.com/en/5.0/ref/settings/#media-url
 MEDIA_URL = '/media/'
+# End Static files
 
 
 # Default primary key field type
@@ -214,24 +220,24 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# --======== django-crispy-forms =======--
+# django-crispy-forms
 # https://django-crispy-forms.readthedocs.io/en/latest/install.html
 # CRISPY_TEMPLATE_PACK = 'uni_form'
 
 # https://github.com/django-crispy-forms/crispy-bootstrap5#usage
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
-# -- End django-crispy-forms --
+# End django-crispy-forms
 
 
-# --======= django-ckeditor =======--
+# django-ckeditor
 # https://github.com/django-ckeditor/django-ckeditor#optional---customizing-ckeditor-editor
 CKEDITOR_CONFIGS = {
     'default': {
         'width': 'auto',
     }
 }
-# -- End django-ckeditor --
+# End django-ckeditor
 
 # channels
 # https://channels.readthedocs.io/en/latest/installation.html#installation

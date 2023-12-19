@@ -1,10 +1,6 @@
 site_name: practece_django
 
-
-
-site_dir: 'wiki/GENERIC/generic'
-
-
+site_dir: 'wiki/GENERIC/generic/build'
 
 nav:
   - index: index.md
@@ -12,24 +8,17 @@ nav:
   - Dev: dev.md
   - settings: settings.md
   - Blog: blog/models.md
+  # My notes:
+  - Database: my_notes/database.md
+  - Forms: my_notes/forms.md
+  - Static: my_notes/static.md
 
-
-
-
-
-
-
+# theme: readthedocs
 theme:
   name: material
 
-
 dev_addr:
     127.0.0.1:8200
-
-
-
-
-
 
 markdown_extensions:
  - pymdownx.highlight
@@ -39,12 +28,11 @@ markdown_extensions:
  - toc:
      permalink: True
 
-
-
-
 # сворачивание страниц
 collapse_single_pages: true
 
+
+# https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
 plugins:
   - search
   - awesome-pages

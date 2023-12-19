@@ -1,4 +1,4 @@
-MANAGE := poetry run ./manage.py
+MANAGE := poetry run python manage.py
 TEST_JUST :=
 
 start:
@@ -14,10 +14,10 @@ test-just:
 	@$(MANAGE) test $(TEST_JUST)
 
 shell:
-	poetry run python manage.py shell_plus --notebook
+	@$(MANAGE) shell_plus --ipython
 
-shell-ipython:
-	poetry run python manage.py shell_plus --ipython
+notebook:
+	@$(MANAGE) shell_plus --notebook
 
 dry:
 	@$(MANAGE) makemigrations --dry-run
@@ -27,7 +27,6 @@ mmigrate:
 
 migrate:
 	@$(MANAGE) migrate
-
 
 .PHONY: static
 static:

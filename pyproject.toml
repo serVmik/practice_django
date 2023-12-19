@@ -16,9 +16,6 @@ channels = "^4.0.0"
 django-allauth = "^0.59.0"
 django-braces = "^1.15.0"
 pillow = "^10.1.0"
-mkdocs = "^1.5.3"
-mkdocs-material = "^9.5.2"
-mkdocs-awesome-pages-plugin = "^2.9.2"
 django-crispy-forms = "^2.1"
 crispy-bootstrap5 = "^2023.10"
 django-debug-toolbar = "^4.2.0"
@@ -33,6 +30,12 @@ jupyterthemes = "^0.20.0"
 jupyter-contrib-nbextensions = "^0.7.0"
 jupyter-nbextensions-configurator = "^0.6.3"
 
+
+
+[tool.poetry.group.doc.dependencies]
+mkdocs = "^1.5.3"
+mkdocs-material = "^9.5.2"
+mkdocs-awesome-pages-plugin = "^2.9.2"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,6 +1,134 @@
+## Create venv
+### [poetry](https://python-poetry.org/)
+```cfgrlanguage
+sudo apt update
+```
+```cfgrlanguage
+sudo apt install curl
+```
+Install a specific version:
+```cfgrlanguage
+curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.5.1 python3 -
+```
+Сheck installation success
+```cfgrlanguage
+poetry --version
+```
+#### Add Poetry to your PATH:
+```cfgrlanguage
+export PATH="/home/{user}/.local/bin:$PATH"
+```
+Enable the creation of a virtual environment:
+```cfgrlanguage
+poetry config virtualenvs.in-project true
+```
+Create the application directory:
+```cfgrlanguage
+mkdir practice_django  
+cd practice_django
+```
+```cfgrlanguage
+poetry install
+```
+[Create a virtual environment:](https://python-poetry.org/docs/cli#shell)
+```cfgrlanguage
+poetry shell
+```
+`Poetry` will create `.venv` in the current directory.
+
+
+
+## **[mkdocs](https://www.mkdocs.org/)**
+```cfgrlanguage
+poetry add --group doc mkdocs
+```
+### [mkdocs-material](https://squidfunk.github.io/mkdocs-material/getting-started/#installation)
+```cfgrlanguage
+poetry add --group doc mkdocs-material
+```
+### [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin#installation)
+```cfgrlanguage
+poetry add --group doc mkdocs-awesome-pages-plugin
+```
+
+
+
+
+## [Django](https://www.djangoproject.com/download/)
+```cfgrlanguage
+poetry add django==4.2.8
+```
+
+
+
+## [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/install.html#installation)
+```cfgrlanguage
+poetry add django-crispy-forms
+```
+
+
+
+## [django-cleanup](https://github.com/un1t/django-cleanup)
+```cfgrlanguage
+poetry add django-cleanup
+```
+
+
+
+## pillow
+```cfgrlanguage
+poetry add pillow
+```
+
+
+
+## [django-ckeditor](https://pypi.org/project/django-ckeditor/#installation)
+```cfgrlanguage
+django-ckeditor
+```
+
+
+
+## [django-allauth](https://docs.allauth.org/en/latest/installation/quickstart.html#quickstart)
+Authorization library
+```cfgrlanguage
+poetry add django-allauth
+```
+
+
+
+## [python-dotenv](https://pypi.org/project/python-dotenv/)
+```cfgrlanguage
+poetry add python-dotenv
+```
+Create a file `.env` in the directory where the project is located (`BASE_DIR`).  
+`.env`  
+```cfgrlanguage
+SECRET_KEY=...
+```
+`settings.py`
+```cfgrlanguage
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+```
+
+
+
+## [django-braces](https://django-braces.readthedocs.io/en/latest/#)
+```cfgrlanguage
+poetry add django-braces
+```
+
+
+
 ## django.contrib.humanize  
 (англ. - очеловечивание шаблонов)  
 [linc](https://docs.djangoproject.com/en/4.2/ref/contrib/humanize/)  
+
 
 
 ## [django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html)
@@ -31,6 +159,9 @@ if settings.DEBUG:
     ]
 ```
 
+
+
+
 ## [channels](https://channels.readthedocs.io/en/latest/installation.html#installation)  
 #### settings.py
 ```cfgrlanguage
@@ -45,7 +176,7 @@ INSTALLED_APPS = (
 )
 ```
 > **Note:**  
-> added without adding "daphne" to INSTALLED_APPS.
+> "channels" add without adding "daphne" to INSTALLED_APPS.
 
 ```cfgrlanguage
 ASGI_APPLICATION = "practice_django.routing.application"
@@ -59,9 +190,11 @@ CHANNEL_LAYERS = {
 }
 ```
 
+
   
 #### routing.py
 add ```routing.py``` to ```practice_django/```
+
 
 
 ## [jupyter-notebook](https://jupyter.org/install#jupyter-notebook)
@@ -75,6 +208,7 @@ To integrate ```notebook``` with ```Django``` you need to install ```django-exte
 To run the notebook:
 ```cfgrlanguage
 jupyter notebook
+Новый / Django Shell-Plus
 ```
 
 ### [jupyterthemes](https://github.com/dunovank/jupyter-themes#install-with-pip)

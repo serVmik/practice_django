@@ -9,3 +9,8 @@ db*
 
 .env
 .coverage
+
+.ipynb_checkpoints/
+*.ipynb
+
+wiki/GENERIC/generic/wiki/
