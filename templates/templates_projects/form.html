@@ -1,0 +1,12 @@
+{% extends 'templates_projects/base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<form method="POST" class="form">
+  {% csrf_token %}
+  {% form_bootstrap form %}
+
+  {% bootstrap_button button_type="submit" content="OK" %}
+  {% bootstrap_button button_type="reset" content="Отмена" %}
+</form>
+{% endblock %}

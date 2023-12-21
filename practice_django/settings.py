@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # installed packages
+
+    # Installed packages
     # https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#installation
     'debug_toolbar',
     # https://channels.readthedocs.io/en/latest/installation.html#installation
@@ -63,21 +64,25 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     # https://django-extensions.readthedocs.io/en/latest/index.html
     'django_extensions',
-    # allauth
+    # Allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
-    # End allauth
+    # End Allauth
     'crispy_forms',
     'crispy_bootstrap5',
     'ckeditor',
+    'django_bootstrap5',
+    # End Installed packages
 
-    # project applications
+    # Project applications
     'blog.apps.BlogConfig',
-    # End
-    # installed packages
+    'discussions.apps.DiscussionsConfig',
+    # 'users.apps.UsersConfig'
+    # End Project applications
+
     # Add django_cleanup to the bottom of INSTALLED_APPS
     # https://github.com/un1t/django-cleanup/#configuration
     'django_cleanup.apps.CleanupConfig',
@@ -197,10 +202,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # https://docs.djangoproject.com/en/5.0/ref/settings/#staticfiles-dirs
 STATICFILES_DIRS = [
-    # "/home/special.polls.com/polls/static",
+    os.path.join(BASE_DIR, 'other_static'),
 ]
 
 # https://docs.djangoproject.com/en/5.0/ref/settings/#staticfiles-finders
+# Утилиты, которые позволяют вытаскивать статику откуда угодно
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",

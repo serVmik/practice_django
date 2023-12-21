@@ -199,12 +199,12 @@ add ```routing.py``` to ```practice_django/```
 
 ## [jupyter-notebook](https://jupyter.org/install#jupyter-notebook)
 ```cfgrlanguage
-poetry add --group dev notebook==6.5.6
+poetry add --group shell notebook==6.5.6
 ```
 > **Note:**  
 > add only notebook==6.5.6
 
-To integrate ```notebook``` with ```Django``` you need to install ```django-extensions```   
+To integrate ```notebook``` with ```Django``` you need to install [django-extensions](#django-extensions)   
 To run the notebook:
 ```cfgrlanguage
 jupyter notebook
@@ -228,7 +228,7 @@ Theme Name to Install| -t  |--
 
 ### Auto code completion [jupyter-tabnine](https://github.com/codota/jupyter-tabnine#installation)
 ```cfgrlanguage
-poetry add --group dev jupyter_contrib_nbextensions
+poetry add --group shell jupyter_contrib_nbextensions
 ```
 Do enable settings for user.  
 Add without using poetry:
@@ -237,7 +237,7 @@ jupyter contrib nbextension install --user
 ```
 Next:
 ```cfgrlanguage
-poetry add --group dev jupyter_nbextensions_configurator
+poetry add --group shell jupyter_nbextensions_configurator
 ```
 Do enable settings for user.  
 Add without using poetry:
@@ -271,4 +271,59 @@ INSTALLED_APPS = (
     ...
 )
 ```
+```cfgrlanguage
+poetry run ./manage.py collectstatic
+```
 
+
+## [django-taggit](https://django-taggit.readthedocs.io/en/latest/)
+1. [install](https://django-taggit.readthedocs.io/en/latest/getting_started.html#getting-started)
+```cfgrlanguage
+poetry add django-taggit
+```
+2. Add to 'INSTALLED_APPS' in your 'settings.py':
+```cfgrlanguage
+INSTALLED_APPS = (
+    # ...
+    "django_bootstrap5",
+    # ...
+)
+```
+
+
+## [django-bootstrap5](https://github.com/zostera/django-bootstrap5#django-bootstrap5)
+[Documentation](https://django-bootstrap5.readthedocs.io/en/latest/)
+1. [install](https://github.com/zostera/django-bootstrap5#installation)
+```cfgrlanguage
+poetry add django-bootstrap5
+```
+2. Add to 'INSTALLED_APPS' in your 'settings.py':
+```cfgrlanguage
+INSTALLED_APPS = (
+    # ...
+    "django_bootstrap5",
+    # ...
+)
+```
+
+## [python-slugify](https://github.com/un33k/python-slugify)
+```cfgrlanguage
+poetry add python-slugify
+```
+```cfgrlanguage
+from slugify import slugify
+```
+
+
+## [Pytils](https://github.com/last-partizan/pytils/)
+
+Pytils is a Russian-specific string utils 
+(transliteration, numeral is words, russian dates, etc)
+```cfgrlanguage
+poetry add pytils
+```
+```cfgrlanguage
+from pytils.translit import slugify
+```
+
+## Python Atom - ?

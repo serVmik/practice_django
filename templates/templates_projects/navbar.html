@@ -1,0 +1,48 @@
+<!--======== Navigation =======-->
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="{% url 'home' %}">Django project</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <!-- For authorized users -->
+      <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+          <!-- Posts -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Посты</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'posts:create' %}">Добавить пост</a></li>
+                <li><a class="dropdown-item" href="{% url 'posts:all' %}">Все посты</a></li>
+                <li><a class="dropdown-item" href="{% url 'posts:user' user.username %}">Мои посты</a></li>
+              </ul>
+          </li><!-- End Posts -->
+          <!-- Discussions -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Дискуссии</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'discussions:create' %}">Добавить дискуссию</a></li>
+                <li><a class="dropdown-item" href="{% url 'discussions:all' %}">Все дискуссии</a></li>
+                <li><a class="dropdown-item" href="{% url 'discussions:user' user.username %}">Мои дискуссии</a></li>
+              </ul>
+          </li><!-- End Discussions -->
+        {% endif %}
+      </ul><!-- End For authorized users -->
+
+      <!-- Authentication -->
+      <section class="collapse navbar-collapse navbar-nav">
+        {% if user.is_authenticated %}
+          <a class="nav-link" href="#">Выйти</a>
+        {% else %}
+          <a class="nav-link" href="#">Регистрация</a>
+          <a class="nav-link" href="#">Войти</a>
+        {% endif %}
+      </section><!-- End Authentication -->
+    </div>
+
+  </div>
+</nav><!-- End Navigation -->

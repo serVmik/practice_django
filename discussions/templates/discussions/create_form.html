@@ -1,0 +1,17 @@
+{% extends 'discussions/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block discussions_content %}
+<!--======= Create Discussion Form =======-->
+  <h2>Что хотите обсудить?</h2>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form|crispy }}
+
+    <input type="submit" value="Сохранить">
+  </form>
+<!-- End Create Discussion Form -->
+{% endblock %}

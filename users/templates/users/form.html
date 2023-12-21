@@ -1,0 +1,8 @@
+{% extends 'users/base.html' %}
+{% load django bootstrap5 %}
+
+{% block content_users %}
+  {% csrf_token %}
+  {{ form bootstrap_form }}
+  {{ button_form button_name='Войти' button_type='submit' button_class='btn btn-success'}}
+{% endblock %}

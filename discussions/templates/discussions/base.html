@@ -1,0 +1,11 @@
+{% extends 'templates_projects/base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <section class="article-clean">
+    <div class="container">
+      {% block discussions_content %}
+      {% endblock %}
+    </div>
+  </section>
+{% endblock %}

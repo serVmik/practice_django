@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load django_bootstrap5 %}
+
+{% block blog_content %}
+  <div class="row">
+    <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+      <div>
+
+        {% for object in object_list %}
+          <div class="intro">
+            <h1 class="text-center">{{ object.title }}</h1>
+            <p class="text-center">
+              <span class="by">by</span>
+              <a href="#">{{ object.author }}</a>
+              <span class="data">{{ object.date_created|date:"SHORT_DATE_FORMAT" }}</span>
+            </p>
+            <p class="">{{ object.content|safe }}</p>
+          </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

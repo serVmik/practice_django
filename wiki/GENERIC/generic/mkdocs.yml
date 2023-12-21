@@ -8,10 +8,11 @@ nav:
   - Dev: dev.md
   - settings: settings.md
   - Blog: blog/models.md
+  - dev blog: blog/dev_blog.md
   # My notes:
+  - Static: static.md
   - Database: my_notes/database.md
   - Forms: my_notes/forms.md
-  - Static: my_notes/static.md
 
 # theme: readthedocs
 theme:

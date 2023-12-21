@@ -1,0 +1,4 @@
+from discussions.views.all_discussions import DiscussionsListView
+from discussions.views.create_discussions import discussions_create
+from discussions.views.detail_discussions import DiscussionDetailView
+from discussions.views.user_discussions import UserDiscussionListView

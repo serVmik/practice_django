@@ -1,0 +1,26 @@
+{% load django_bootstrap5 %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ title }}</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+      .main {
+        margin-top: 70px; /* Add a top margin to avoid content overlay */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      {% include './navbar.html' %}
+    </header>
+    <main class="container main">
+      {% block content %}
+      {% endblock %}
+    </main>
+   </body>
+</html>
