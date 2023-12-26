@@ -79,7 +79,7 @@ INSTALLED_APPS = [
 
     # Project applications
     'blog.apps.BlogConfig',
-    'discussions.apps.DiscussionsConfig',
+    # 'discussions.apps.DiscussionsConfig',     # в ветке blog
     # 'users.apps.UsersConfig'
     # End Project applications
 

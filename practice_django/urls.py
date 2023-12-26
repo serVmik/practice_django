@@ -14,7 +14,6 @@ urlpatterns = [
         TemplateView.as_view(template_name='templates_projects/home.html'),
         name='home'),
     path('posts/', include('blog.urls')),
-    path('discussions/', include('discussions.urls')),
 
     # https://docs.allauth.org/en/latest/installation/quickstart.html#quickstart
     # path('accounts/', include('allauth.urls')),
