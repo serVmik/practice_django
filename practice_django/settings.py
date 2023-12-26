@@ -80,6 +80,7 @@ INSTALLED_APPS = [
     # Project applications
     'blog.apps.BlogConfig',
     'discussions.apps.DiscussionsConfig',
+    'forms_app.apps.FormsAppConfig',
     # 'users.apps.UsersConfig'
     # End Project applications
 

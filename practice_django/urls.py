@@ -15,6 +15,7 @@ urlpatterns = [
         name='home'),
     path('posts/', include('blog.urls')),
     path('discussions/', include('discussions.urls')),
+    path('form/', include('forms_app.urls')),
 
     # https://docs.allauth.org/en/latest/installation/quickstart.html#quickstart
     # path('accounts/', include('allauth.urls')),
